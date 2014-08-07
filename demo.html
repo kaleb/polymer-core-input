@@ -60,6 +60,23 @@
 <body>
 
   <section horizontal start layout>
+    <aside>A single-line text input with datalist. See console for committed values.</aside>
+    <core-input id="singleDatalist" placeholder="Type something..." list="datalist"></core-input>
+    <input id="singleDatalist2" placeholder="Type something..." list="datalist">
+    <datalist id="datalist">
+      <option>Option one</option>
+      <option>Option two</option>
+      <option>Option threeve</option>
+    </datalist>
+    <script>
+      var singleDatalist = document.getElementById('singleDatalist');
+      singleDatalist.addEventListener('change', function() {
+        console.log('datalist: value committed: ', singleDatalist.value);
+      });
+    </script>
+  </section>
+
+  <section horizontal start layout>
     <aside>A single-line text input. See console for committed values.</aside>
     <core-input id="single" placeholder="Type something..."></core-input>
     <script>

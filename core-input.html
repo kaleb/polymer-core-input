@@ -99,7 +99,7 @@ Fired when the inputValue of this text input changes and passes validation.
     </template>
 
     <template if="{{!multiline}}">
-      <input id="input" value="{{inputValue}}" disabled?="{{disabled}}" type="{{type}}" placeholder="{{placeholder}}" autofocus?="{{autofocus}}" required?="{{required}}" readonly?="{{readonly}}" pattern="{{pattern}}" min="{{min}}" max="{{max}}" step="{{step}}" maxlength="{{maxlength}}" aria-label="{{label || placeholder}}" aria-invalid="{{invalid}}" on-keydown="{{keydownAction}}" on-change="{{inputChangeAction}}" on-focus="{{inputFocusAction}}" on-blur="{{inputBlurAction}}">
+      <input id="input" value="{{inputValue}}" disabled?="{{disabled}}" type="{{type}}" placeholder="{{placeholder}}" autofocus?="{{autofocus}}" required?="{{required}}" readonly?="{{readonly}}" pattern="{{pattern}}" min="{{min}}" max="{{max}}" step="{{step}}" maxlength="{{maxlength}}" list="{{list}}" aria-label="{{label || placeholder}}" aria-invalid="{{invalid}}" on-keydown="{{keydownAction}}" on-change="{{inputChangeAction}}" on-focus="{{inputFocusAction}}" on-blur="{{inputBlurAction}}">
     </template>
 
   </template>
@@ -255,7 +255,7 @@ Fired when the inputValue of this text input changes and passes validation.
          * @type number
          */
         maxlength: null,
-  
+
         /**
          * If this property is true, the text input's inputValue failed validation.
          *
@@ -263,7 +263,15 @@ Fired when the inputValue of this text input changes and passes validation.
          * @type boolean
          * @default false
          */
-        invalid: false
+        invalid: false,
+
+        /**
+         * (single line only) The ID of datalist.
+         *
+         * @attribute list
+         * @type string
+         */
+        list: null
       },
 
       ready: function() {
