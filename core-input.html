@@ -99,7 +99,10 @@ Fired when the inputValue of this text input changes and passes validation.
     </template>
 
     <template if="{{!multiline}}">
-      <input id="input" value="{{inputValue}}" disabled?="{{disabled}}" type="{{type}}" placeholder="{{placeholder}}" autofocus?="{{autofocus}}" required?="{{required}}" readonly?="{{readonly}}" pattern="{{pattern}}" min="{{min}}" max="{{max}}" step="{{step}}" maxlength="{{maxlength}}" list="{{list}}" aria-label="{{label || placeholder}}" aria-invalid="{{invalid}}" on-keydown="{{keydownAction}}" on-change="{{inputChangeAction}}" on-focus="{{inputFocusAction}}" on-blur="{{inputBlurAction}}">
+      <input id="input" value="{{inputValue}}" disabled?="{{disabled}}" type="{{type}}" placeholder="{{placeholder}}" autofocus?="{{autofocus}}" required?="{{required}}" readonly?="{{readonly}}" pattern="{{pattern}}" min="{{min}}" max="{{max}}" step="{{step}}" maxlength="{{maxlength}}" list="datalist" aria-label="{{label || placeholder}}" aria-invalid="{{invalid}}" on-keydown="{{keydownAction}}" on-change="{{inputChangeAction}}" on-focus="{{inputFocusAction}}" on-blur="{{inputBlurAction}}">
+      <datalist id="datalist">
+        <content select="option"></content>
+      </datalist>
     </template>
 
   </template>
@@ -264,14 +267,6 @@ Fired when the inputValue of this text input changes and passes validation.
          * @default false
          */
         invalid: false,
-
-        /**
-         * (single line only) The ID of datalist.
-         *
-         * @attribute list
-         * @type string
-         */
-        list: null
       },
 
       ready: function() {
