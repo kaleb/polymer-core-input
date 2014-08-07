@@ -61,13 +61,11 @@
 
   <section horizontal start layout>
     <aside>A single-line text input with datalist. See console for committed values.</aside>
-    <core-input id="singleDatalist" placeholder="Type something..." list="datalist"></core-input>
-    <input id="singleDatalist2" placeholder="Type something..." list="datalist">
-    <datalist id="datalist">
+    <core-input id="singleDatalist" placeholder="Type something...">
       <option>Option one</option>
       <option>Option two</option>
       <option>Option threeve</option>
-    </datalist>
+    </core-input>
     <script>
       var singleDatalist = document.getElementById('singleDatalist');
       singleDatalist.addEventListener('change', function() {
